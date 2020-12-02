@@ -1,0 +1,29 @@
+<template>
+    <div  if:true={hasNoContent} class={messageStyle}>
+        <lightning-formatted-rich-text
+            value={text}>
+        </lightning-formatted-rich-text>
+    </div>
+    <div  if:true={hasFileUpload}>
+        <lightning-card  icon-name='action:preview' title="Einstein Vision">  
+            <div class="slds-align--absolute-center">
+                <img src={pictureSrc} class="picture"/>
+            </div>
+            <lightning-file-upload
+            label="Upload"
+            name="fileUploader"
+            accept={acceptedFormats}
+            record-id={record}
+            onuploadfinished={handleUploadFinished}
+            multiple> </lightning-file-upload>
+            
+    </lightning-card>
+           
+
+    </div>
+  <div  if:true={hasFileUploaded}>
+                <br>
+                   <div class="chasitor chat-content">{text}</div>
+                    <div class="chasitor chat-content">I see your vehicle is {predictionLabel} with a probability of {predictionValue}. An agent will be in touch shortly with any further questions. Is there anything else I can help with today?</div>
+    </div>
+ </template>

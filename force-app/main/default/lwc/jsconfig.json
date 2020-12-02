@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/visionComponent": [
+                "visionComponent/visionComponent.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    },
+    "paths": {
+        "c/*": [
+            "*"
+        ]
+    }
+}
